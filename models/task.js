@@ -3,6 +3,10 @@ const mongoose = require('mongoose')
 // #TODO: Add a due date field
 
 const Task = new mongoose.Schema({
+    id: {
+        type: String,
+        required: true
+    },
     name: {
         type: String, 
         required: true
