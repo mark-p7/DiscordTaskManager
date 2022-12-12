@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+// #TODO: Add a due date field
+
 const Task = new mongoose.Schema({
     name: {
         type: String, 
@@ -9,17 +11,13 @@ const Task = new mongoose.Schema({
         type: String, 
         required: true
     },
-    dueDate: {
-        type: Date, 
-        required: true
-    },
     completed: {
         type: Boolean, 
         required: true
     },
-    priority: {
-        type: Number, 
-        required: true
+    created: {
+        type: Date,
+        default: Date.now
     },
     user: {
         type: String, 
@@ -27,4 +25,4 @@ const Task = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Task', Task) //pokeUser is the name of the collection in the db
+module.exports = mongoose.model('Task', Task) // Task is the name of the collection in the db
